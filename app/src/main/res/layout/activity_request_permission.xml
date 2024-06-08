@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/mainColor"
+        tools:context=".presentation.ui.activity.RequestPermissionActivity">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolBar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/mainColorLight"
+            app:flow_verticalAlign="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:fontFamily="@font/jost_bold"
+                android:paddingStart="12dp"
+                android:text="Need Permission"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                tools:layout_editor_absoluteX="44dp"
+                tools:layout_editor_absoluteY="11dp" />
+        </androidx.appcompat.widget.Toolbar>
+
+        <LinearLayout
+            android:id="@+id/llDeviceStorage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_gravity="center"
+                android:src="@drawable/baseline_sd_storage_24"
+                app:tint="@color/mainColorLight" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:gravity="center"
+                android:text="Storage Permission Required"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:gravity="center"
+                android:text="We need access to your device's storage to save WhatsApp Status Images and Videos."
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnAllowPermission"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:backgroundTint="@color/mainColorLight"
+                android:letterSpacing="0.1"
+                android:padding="15dp"
+                android:text="ALLOW   Permission"
+                android:textColor="#FFFFFF" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llStatusTree"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/allow_permission_instructions" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/jost_medium"
+                android:gravity="start"
+                android:text="Starting Android 11(Android R),\nDQ Status Saver can no longer access \nStatuses easily due to Android Storage limitations."
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/jost"
+                android:gravity="start"
+                android:text="To access Statuses, certain additional steps are required to be followed from your end.These are only required to be performed once."
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+
+            <!--  <TextView
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="16dp"
+                  android:gravity="start"
+                  android:fontFamily="@font/jost_bold"
+                  android:text="Follow below steps:"
+                  android:textColor="@color/white"
+                  android:textSize="16sp" />
+
+              <TextView
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="16dp"
+                  android:fontFamily="@font/jost"
+                  android:gravity="start"
+                  android:text="1. Enable `Show Internal Storage`, If you can not see your Primary Storage"
+                  android:textColor="@color/white"
+                  android:textSize="12sp" />
+
+              <TextView
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="16dp"
+                  android:gravity="start"
+                  android:fontFamily="@font/jost"
+                  android:text="2. Select your Phone's Primary Storage from the left drawer."
+                  android:textColor="@color/white"
+                  android:textSize="12sp" />
+
+              <TextView
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="16dp"
+                  android:gravity="start"
+                  android:fontFamily="@font/jost"
+                  android:text="3. Go to `Android/media` folder."
+                  android:textColor="@color/white"
+                  android:textSize="12sp" />
+
+              <TextView
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="16dp"
+                  android:gravity="start"
+                  android:fontFamily="@font/jost"
+                  android:text="4. Select the directory and it's done!."
+                  android:textColor="@color/white"
+                  android:textSize="12sp" />
+
+              <TextView
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="16dp"
+                  android:gravity="start"
+                  android:fontFamily="@font/jost"
+                  android:text="Note: If the folder is already opened on the next screen, just allow the access to the same"
+                  android:textColor="@color/white"
+                  android:textSize="12sp" />-->
+
+
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnAllowStatusFolder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:backgroundTint="@color/mainColorLight"
+                android:fontFamily="@font/jost_bold"
+                android:letterSpacing="0.1"
+                android:padding="15dp"
+                android:text="ALLOW Access "
+                android:textColor="#FFFFFF" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
